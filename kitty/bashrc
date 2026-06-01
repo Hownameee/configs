@@ -1,0 +1,66 @@
+# Source the global bashrc first to load existing configurations
+if [ -f ~/.bashrc ]; then
+    source ~/.bashrc
+fi
+
+# Function to dynamically set the prompt
+build_prompt() {
+    # Capture exit code of the last run command immediately
+    local exit_code=$?
+    
+    # 1. Subtle timestamp in slate/gray color
+    local current_time
+    current_time="\[\033[38;5;244m\][$(date +%H:%M)]\[\033[0m\]"
+    
+    # 2. Modern absolute directory indicator using "root" word and folder icon ()
+    local dir_info=""
+    local folder_icon="\[\033[38;5;111m\]\[\033[0m\] "
+    if [ "$PWD" = "/" ]; then
+        dir_info="${folder_icon} \[\033[38;5;111;1m\]root\[\033[0m\]"
+    else
+        local parent="${PWD%/*}"
+        local leaf="${PWD##*/}"
+        local colored_sep="\[\033[38;5;242m\] › \[\033[0;38;5;246m\]"
+        
+        local parent_formatted=""
+        if [ "$parent" = "" ]; then
+            # For paths like "/home", parent is root. We show "root" in grey.
+            parent_formatted="\[\033[38;5;242m\]root\[\033[0m\]"
+        else
+            # For paths like "/home/nam", parent is "/home".
+            # Strip the leading "/" and format subdirectories
+            local temp_parent="${parent#/}"
+            parent_formatted="\[\033[38;5;242m\]root › \[\033[0;38;5;246m\]${temp_parent//\//$colored_sep}"
+        fi
+        
+        dir_info="${folder_icon} ${parent_formatted}\[\033[38;5;242m\] › \[\033[0;38;5;111;1m\]$leaf\[\033[0m\]"
+    fi
+    
+    # 3. Get the current Git branch if inside a repository
+    local branch
+    branch=$(git symbolic-ref --short HEAD 2>/dev/null) || branch=$(git describe --tags --always 2>/dev/null) 2>/dev/null
+    
+    local git_info=""
+    if [ -n "$branch" ]; then
+        # Displays " on  branch_name" in orange
+        git_info=" on \[\033[38;5;208m\] $branch\[\033[0m\]"
+    fi
+
+    # 4. Set arrow color based on exit code of the last command
+    local arrow_color
+    if [ $exit_code -eq 0 ]; then
+        arrow_color="\[\033[01;32m\]" # Green on success
+    else
+        arrow_color="\[\033[01;31m\]" # Red on failure
+    fi
+    
+    # PS1 layout: 
+    # Line 1:  folder [on  branch] [HH:MM]
+    # Line 2: ❯ 
+    PS1="${dir_info}${git_info} ${current_time}\n${arrow_color}$\[\033[00m\] "
+}
+
+# Run the prompt builder before displaying each prompt
+PROMPT_COMMAND=build_prompt
+
+fastfetch

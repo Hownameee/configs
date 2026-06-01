@@ -1,0 +1,13 @@
+curl
+default-jdk
+fastfetch
+gh
+git
+gnome-shell-extension-manager
+htop
+kitty
+maven
+nala
+powertop
+python3-venv
+remmina

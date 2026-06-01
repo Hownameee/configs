@@ -1,0 +1,11 @@
+nvidia-driver
+antigravity
+cloudflare-warp
+docker
+google-chrome-stable
+fcitx5
+fcitx5-unikey
+virtualbox-7.2
+spotify-client
+golang
+nodejs
