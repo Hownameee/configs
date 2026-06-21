@@ -3,8 +3,8 @@
   "logo": {
     "type": "kitty",
     "source": "~/.config/fastfetch/deb.png",
-    "width": 36,
-    "height": 18,
+    "width": 34,
+    "height": 17,
     "padding": {
       "top": 2,
       "left": 2,
@@ -18,104 +18,109 @@
     // Title
     {
       "type": "title",
-      "format": "{#separator}╭─────────────────────────────────────────────────────────────────╮"
+      "format": "{#separator}╭─────────────────────────────────────────────╮"
     },
     // System Information
     {
       "type": "custom",
-      "format": "{#separator}│ {#}System Information\u001b[107G{#separator}│"
+      "format": "{#separator}│ {#}System Information\u001b[85G{#separator}│"
     },
     {
       "type": "os",
-      "key": "{#separator}│  {#keys}󰍹 OS\u001b[s\u001b[107G{#separator}│\u001b[u"
+      "key": "{#separator}│  {#keys}󰍹 OS\u001b[s\u001b[85G{#separator}│\u001b[u"
     },
     {
       "type": "kernel",
-      "key": "{#separator}│  {#keys}󰒋 Kernel\u001b[s\u001b[107G{#separator}│\u001b[u"
+      "key": "{#separator}│  {#keys}󰒋 Kernel\u001b[s\u001b[85G{#separator}│\u001b[u"
     },
     {
       "type": "uptime",
-      "key": "{#separator}│  {#keys}󰅐 Uptime\u001b[s\u001b[107G{#separator}│\u001b[u"
+      "key": "{#separator}│  {#keys}󰅐 Uptime\u001b[s\u001b[85G{#separator}│\u001b[u"
     },
     {
       "type": "packages",
-      "key": "{#separator}│  {#keys}󰏖 Packages\u001b[s\u001b[107G{#separator}│\u001b[u",
+      "key": "{#separator}│  {#keys}󰏖 Packages\u001b[s\u001b[85G{#separator}│\u001b[u",
       "format": "{all}"
     },
     {
       "type": "custom",
-      "format": "{#separator}│\u001b[107G│"
+      "format": "{#separator}│\u001b[85G│"
     },
     // Desktop Environment
     {
       "type": "custom",
-      "format": "{#separator}│ {#}Desktop Environment\u001b[107G{#separator}│"
+      "format": "{#separator}│ {#}Desktop Environment\u001b[85G{#separator}│"
     },
     {
       "type": "de",
-      "key": "{#separator}│  {#keys}󰧨 DE\u001b[s\u001b[107G{#separator}│\u001b[u"
+      "key": "{#separator}│  {#keys}󰧨 DE\u001b[s\u001b[85G{#separator}│\u001b[u"
     },
     {
       "type": "wm",
-      "key": "{#separator}│  {#keys}󱂬 WM\u001b[s\u001b[107G{#separator}│\u001b[u"
+      "key": "{#separator}│  {#keys}󱂬 WM\u001b[s\u001b[85G{#separator}│\u001b[u"
     },
-    {
-      "type": "wmtheme",
-      "key": "{#separator}│  {#keys}󰉼 Theme\u001b[s\u001b[107G{#separator}│\u001b[u"
-    },
+    // {
+    //   "type": "wmtheme",
+    //   "key": "{#separator}│  {#keys}󰉼 Theme\u001b[s\u001b[85G{#separator}│\u001b[u"
+    // },
     {
       "type": "display",
-      "key": "{#separator}│  {#keys}󰹑 Resolution\u001b[s\u001b[107G{#separator}│\u001b[u"
+      "key": "{#separator}│  {#keys}󰹑 Resolution\u001b[s\u001b[85G{#separator}│\u001b[u",
+      "format": "{1}x{2} @ {3} Hz in {12}\""
     },
     {
       "type": "shell",
-      "key": "{#separator}│  {#keys}󰞷 Shell\u001b[s\u001b[107G{#separator}│\u001b[u"
+      "key": "{#separator}│  {#keys}󰞷 Shell\u001b[s\u001b[85G{#separator}│\u001b[u"
     },
-    {
-      "type": "terminalfont",
-      "key": "{#separator}│  {#keys}󰛖 Font\u001b[s\u001b[107G{#separator}│\u001b[u"
-    },
+    // {
+    //   "type": "terminalfont",
+    //   "key": "{#separator}│  {#keys}󰛖 Font\u001b[s\u001b[85G{#separator}│\u001b[u"
+    // },
     {
       "type": "custom",
-      "format": "{#separator}│\u001b[107G│"
+      "format": "{#separator}│\u001b[85G│"
     },
     // Hardware Information
     {
       "type": "custom",
-      "format": "{#separator}│ {#}Hardware Information\u001b[107G{#separator}│"
+      "format": "{#separator}│ {#}Hardware Information\u001b[85G{#separator}│"
     },
     {
       "type": "cpu",
-      "key": "{#separator}│  {#keys}󰻠 CPU\u001b[s\u001b[107G{#separator}│\u001b[u"
+      "key": "{#separator}│  {#keys}󰻠 CPU\u001b[s\u001b[85G{#separator}│\u001b[u",
+      "format": "Intel Core i7-12650H"
     },
     {
       "type": "gpu",
-      "key": "{#separator}│  {#keys}󰢮 GPU\u001b[s\u001b[107G{#separator}│\u001b[u"
+      "key": "{#separator}│  {#keys}󰢮 GPU\u001b[s\u001b[85G{#separator}│\u001b[u",
+      "format": "{2:16}"
     },
     {
       "type": "memory",
-      "key": "{#separator}│  {#keys}󰍛 Memory\u001b[s\u001b[107G{#separator}│\u001b[u"
+      "key": "{#separator}│  {#keys}󰍛 Memory\u001b[s\u001b[85G{#separator}│\u001b[u",
+      "format": "{1} / {2} ({3})"
     },
     {
       "type": "disk",
-      "key": "{#separator}│  {#keys}󰋊 Disk (/)\u001b[s\u001b[107G{#separator}│\u001b[u",
-      "folders": "/"
+      "key": "{#separator}│  {#keys}󰋊 Disk (/)\u001b[s\u001b[85G{#separator}│\u001b[u",
+      "folders": "/",
+      "format": "{1} / {2} ({3})"
     },
     {
       "type": "custom",
-      "format": "{#separator}│\u001b[107G│"
+      "format": "{#separator}│\u001b[85G│"
     },
     // Colors
     {
       "type": "colors",
-      "key": "{#separator}│\u001b[s\u001b[107G{#separator}│\u001b[u",
+      "key": "{#separator}│\u001b[s\u001b[85G{#separator}│\u001b[u",
       "symbol": "circle",
-      "paddingLeft": 23
+      "paddingLeft": 13
     },
     // Footer
     {
       "type": "custom",
-      "format": "{#separator}╰─────────────────────────────────────────────────────────────────╯"
+      "format": "{#separator}╰─────────────────────────────────────────────╯"
     }
   ]
 }
