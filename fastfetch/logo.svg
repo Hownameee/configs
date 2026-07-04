@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="59 58 138 138" width="256" height="256">
+  <!-- mgm.png -> SVG | Catppuccin Macchiato palette | transparent background -->
+  <!--
+    ⌐ shape: top bar (x=101-194, y=62-80) + right bar (x=174-194, y=62-160)
+      TL corner (101,62): ROUNDED r=4  (open cut end)
+      TR corner (194,61): ROUNDED r=20  (outer elbow)
+      inner turn (174,80): ROUNDED r=12
+      BR corner (194,160): ROUNDED r=4  (open cut end)
+
+    └ shape: left bar (x=62-82, y=94-192) + bottom bar (x=62-155, y=174-192)
+      TL corner (62,94): ROUNDED r=4  (open cut end)
+      inner turn (82,174): ROUNDED r=12
+      BL corner (62,193): ROUNDED r=20  (outer elbow)
+      BR corner (155,192): ROUNDED r=4  (open cut end)
+  -->
+
+  <defs>
+    <linearGradient id="topGradient" x1="101" y1="61" x2="194" y2="160" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#8AADF4"/>
+      <stop offset="0.56" stop-color="#B7BDF8"/>
+      <stop offset="1" stop-color="#C6A0F6"/>
+    </linearGradient>
+
+    <linearGradient id="bottomGradient" x1="62" y1="193" x2="155" y2="94" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#8BD5CA"/>
+      <stop offset="0.52" stop-color="#8AADF4"/>
+      <stop offset="1" stop-color="#F5BDE6"/>
+    </linearGradient>
+
+    <filter id="softGlow" x="44" y="43" width="168" height="168" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="0" stdDeviation="2.4" flood-color="#8BD5CA" flood-opacity="0.32"/>
+      <feDropShadow dx="0" dy="1.5" stdDeviation="1.6" flood-color="#181926" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  <g filter="url(#softGlow)">
+  <!-- ⌐: top-right L shape -->
+  <path fill="url(#topGradient)" stroke="#CAD3F5" stroke-opacity="0.22" stroke-width="1" d="
+    M 105 62
+    L 174 62
+    A 20 20 0 0 1 194 82
+    L 194 156
+    Q 194 160 190 160
+    L 178 160
+    Q 174 160 174 156
+    L 174 92
+    A 12 12 0 0 0 162 80
+    L 105 80
+    Q 101 80 101 76
+    L 101 66
+    Q 101 62 105 62
+    Z
+  "/>
+
+  <!-- └: bottom-left L shape -->
+  <path fill="url(#bottomGradient)" stroke="#CAD3F5" stroke-opacity="0.18" stroke-width="1" d="
+    M 66 94
+    L 78 94
+    Q 82 94 82 98
+    L 82 162
+    A 12 12 0 0 0 94 174
+    L 151 174
+    Q 155 174 155 178
+    L 155 188
+    Q 155 192 151 192
+    L 82 192
+    A 20 20 0 0 1 62 172
+    L 62 98
+    Q 62 94 66 94
+    Z
+  "/>
+  </g>
+</svg>
