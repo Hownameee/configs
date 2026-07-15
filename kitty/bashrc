@@ -63,4 +63,7 @@ build_prompt() {
 # Run the prompt builder before displaying each prompt
 PROMPT_COMMAND=build_prompt
 
+alias ca='clear'
+alias c='clear && ff'
+
 fastfetch
